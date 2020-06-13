@@ -1,0 +1,50 @@
+
+@import "aside.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px 0 0 170px;
+}
+
+movie-list {
+    display: block;
+    margin-top: 32px;
+    width: 100%;
+    padding: 16px;
+}
+
+.clock {
+    width: 100%;
+    background-color: black;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    font-family: sans-serif;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+ 
+ 
+.clock .time{
+    font-size: 15px;
+    margin: 0;
+}
+ 
+ 
+.clock .date {
+    font-size: 15px;
+    margin: 0;
+}
