@@ -6,30 +6,32 @@ class MovieDetail extends HTMLElement {
         this.shadowDOM = this.attachShadow({mode: "open"});
     }
     
-    set movies(movies) {
-        this._movies = movies;
-        this.render();
+    set detail(detail) {
+        this._detail = detail
+
+        if (this._detail == null) {
+            this.renderEmpty()
+        } else {
+            this.render()
+        }
     }
- 
-    renderError(message) {
-        this.shadowDOM.innerHTML = `
-            <style>
-                .placeholder {
-                    font-weight: lighter;
-                    color: rgba(0,0,0,0.5);
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
-            </style>        
-        `;
-        shadowDOM.innerHTML += `<h2 class="placeholder">${message}</h2>`;
+
+    set clickEvent(event) {
+        this._clickEvent = event;
+    }
+
+    renderEmpty () {
+        this.shadowDOM.innerHTML = "";
     }
  
     render() {
         this.shadowDOM.innerHTML = "";
-        console.log("AA")
+        const movieDetailElement = document.createElement("modal-detail");
+        movieDetailElement.detail = this._detail
+        this.shadowDOM.appendChild(movieDetailElement)
+        movieDetailElement.closeElement.addEventListener("click", () => {
+            this._clickEvent()
+        })
     }
 }
  

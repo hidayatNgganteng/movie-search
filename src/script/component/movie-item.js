@@ -40,7 +40,8 @@ class MovieItem extends HTMLElement {
                 }
 
                 .movie-info:hover{
-                    background-color: #efefef
+                    background-color: #efefef;
+                    cursor: pointer;
                 }
             
                 .movie-info > h2 {
